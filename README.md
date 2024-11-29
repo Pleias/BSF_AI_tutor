@@ -5,9 +5,8 @@ The service takes an essay and a predefined question as input and returns detail
 
 ## Features
 - Essay evaluation with AI-powered feedback
-- Predefined writing prompts
 - HTML-formatted response suitable for integration into applications
-- Docker containerization for easy deployment
+- Docker containerization
 
 ## Prerequisites
 - Docker and Docker Compose installed
@@ -45,8 +44,8 @@ import requests
 # For essay evaluation
 url = "http://127.0.0.1:8090/submit"
 data = {
-    "essayInput": "Your essay text here",
-    "questionInput": "The predefined question"
+    "essayInput": "User input text",
+    "questionInput": "Question for the writing exercise"
 }
 
 # Make API call and get HTML response
