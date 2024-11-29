@@ -1,0 +1,31 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay Submission Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>EXPRESSION ÉCRITE</h1>
+
+    <p>À vous de jouer ! {{ essay_question }}</p>
+
+    <!-- Form with a textarea for essay input -->
+    <form action="/submit" method="POST">
+        <textarea id="essayInput" name="essayInput" placeholder="Écrivez un texte d'au moins 30 mots" required>{{ essay_text }}</textarea></textarea>
+        <br><br>
+        <button type="submit">Valider</button>
+    </form>
+    
+    {% if error_analysis %}
+    <div class="error-analysis">
+        {{error_analysis | safe}}
+    </div>
+    {% endif %}
+
+</body>
+</html>
