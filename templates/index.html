@@ -17,9 +17,11 @@
     <!-- Form with a textarea for essay input -->
     <form action="/submit" method="POST">
         <textarea id="essayInput" name="essayInput" placeholder="Écrivez un texte d'au moins 30 mots" required>{{ essay_text }}</textarea></textarea>
+        <textarea id="questionInput" name="questionInput" required hidden>{{ essay_question }}</textarea>
         <br><br>
         <button type="submit">Valider</button>
     </form>
+
     
     {% if error_analysis %}
     <div class="error-analysis">

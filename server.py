@@ -17,7 +17,10 @@ def index():
 def submit():
     essay_question = request.form.get("questionInput") 
     essay_input = request.form.get("essayInput")
-    error_analysis = correct_text(essay_input, essay_question) 
+    error_analysis = correct_text(question=essay_question, answer=essay_input) 
+    # print("question: ", essay_question, "\n", file = sys.stderr)
+    # print("essay: ", essay_input, "\n", file = sys.stderr)
+    # print("analysis: ", error_analysis, "\n", file = sys.stderr)
     return render_template("index.html", 
                          essay_question=essay_question,
                          essay_text=essay_input, 
