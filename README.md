@@ -33,7 +33,8 @@ Try the interface to see example inputs and outputs
 
 <img src="https://github.com/user-attachments/assets/a1aae489-ac0f-428f-ba3d-7ec228c939f7" width="400" alt="Input Interface"/>
 </br>
-<img src="https://github.com/user-attachments/assets/e6ae65e7-0229-42dc-abb1-0c29e4c70b9b" width="500" alt="Output Interface"/>
+<img src="https://github.com/user-attachments/assets/18809330-647b-4fbb-8660-02674ab922f8" width="400" alt="Output Interface"/>
+
 
 ## Integration
 
