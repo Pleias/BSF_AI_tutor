@@ -1,6 +1,14 @@
 from huggingface_hub import InferenceClient
+import os
 
-hf_token = "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"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+hf_token = os.getenv("HF_TOKEN")
+
+
+# hf_token = "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"
 
 def correct_text(question, answer):
     prompt = f"""<s>[INST] Tu es un enseignant qui doit évaluer la réponse d'un étudiant.

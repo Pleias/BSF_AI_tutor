@@ -20,11 +20,15 @@ For testing purposes, you can:
 git clone (https://github.com/Pleias/BSF_AI_tutor.git)
 cd BSF_AI_tutor
 ```
-2. Run Docker Compose
+2. Write you hugging face key into .env file
+```bash
+HF_TOKEN=your_hugging_face_key_here
+```
+3. Run Docker Compose
 ```bash
 docker-compose up --build
 ```
-3. Open http://127.0.0.1:8090 in your browser
+4. Open http://127.0.0.1:8090 in your browser
 Try the interface to see example inputs and outputs
 
 <img src="https://github.com/user-attachments/assets/a1aae489-ac0f-428f-ba3d-7ec228c939f7" width="400" alt="Input Interface"/>
