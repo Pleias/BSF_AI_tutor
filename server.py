@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash, render_template_string
 from end_point_sripts import correct_text
+import sys
 
 app = Flask(__name__)
 
@@ -17,6 +18,7 @@ def index():
 def submit():
     essay_question = request.form.get("questionInput") 
     essay_input = request.form.get("essayInput")
+    essay_input = essay_input.replace("\n", " ")
     error_analysis = correct_text(question=essay_question, answer=essay_input) 
     # print("question: ", essay_question, "\n", file = sys.stderr)
     # print("essay: ", essay_input, "\n", file = sys.stderr)
