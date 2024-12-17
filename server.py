@@ -7,6 +7,9 @@ app = Flask(__name__)
 
 app.secret_key = "b9f1a3d5c3e47f5a94e7b6b8a3c1d6e8"
 
+def sanitize_text(text):
+    return text.strip().replace('\n', ' ').replace('\r', ' ')
+
 @app.route("/", methods=['GET'])
 def index():
     return render_template("index.html", 
@@ -18,8 +21,9 @@ def index():
 def submit():
     essay_question = request.form.get("questionInput") 
     essay_input = request.form.get("essayInput")
-    essay_input = essay_input.replace("\n", " ")
-    error_analysis = correct_text(question=essay_question, answer=essay_input) 
+    question = sanitize_text(essay_question)
+    answer = sanitize_text(essay_input)
+    error_analysis = correct_text(question=question, answer=answer) 
     # print("question: ", essay_question, "\n", file = sys.stderr)
     # print("essay: ", essay_input, "\n", file = sys.stderr)
     # print("analysis: ", error_analysis, "\n", file = sys.stderr)
