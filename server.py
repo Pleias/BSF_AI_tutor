@@ -32,5 +32,17 @@ def submit():
                          essay_text=essay_input, 
                          error_analysis=error_analysis)
 
+@app.route("/analyze", methods=['POST'])
+def api_analyze():
+    essay_input = request.form.get("essayInput")
+    essay_question = request.form.get("questionInput")
+    
+    question = sanitize_text(essay_question)
+    answer = sanitize_text(essay_input)
+    
+    analysis = correct_text(question=question, answer=answer)
+    
+    return {"analysis": analysis}
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8090, debug=True)
